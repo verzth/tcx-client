@@ -1,0 +1,41 @@
+{
+    "name": "verzth/tcx-client",
+    "description": "TCX Client - Add-on for Authentication Module for Client-Server Transaction (One Way - Two Way)",
+    "keywords": ["laravel", "tcx", "owtc", "twtc", "ftc", "authentication"],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "^5.6",
+        "illuminate/http": "^5.6",
+        "symfony/http-foundation": "^4",
+        "symfony/http-kernel": "^4",
+        "ixudra/curl": "^6.16"
+    },
+    "authors": [
+        {
+            "name": "Silverius",
+            "email": "silveriuz16@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Verzth\\TCX\\TCXServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Verzth\\TCXClient\\": "src/"
+        },
+        "files": [
+            "src/Helpers/tcx.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "fzaninotto/faker": "^1.8"
+    }
+}
