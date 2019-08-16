@@ -26,10 +26,10 @@ class TCXServiceProvider extends ServiceProvider{
      */
     public function register()
     {
-        $this->mergeConfigFrom($this->configPath(), 'tcx');
+        $this->mergeConfigFrom($this->configPath(), 'tcx-client');
 
         $this->app->bind('Verzth\TCXClient', function ($app) {
-            $options = $app['config']->get('tcx');
+            $options = $app['config']->get('tcx-client');
             return new TCX($options);
         });
 
@@ -43,12 +43,12 @@ class TCXServiceProvider extends ServiceProvider{
      *
      */
     public function boot(){
-        $this->publishes([$this->configPath() => $this->app->basePath().'/config/tcx.php']);
+        $this->publishes([$this->configPath() => $this->app->basePath().'/config/tcx-client.php']);
     }
 
     protected function configPath()
     {
-        return __DIR__ . '/../config/tcx.php';
+        return __DIR__ . '/../config/tcx-client.php';
     }
     /*protected function helperPath()
     {
